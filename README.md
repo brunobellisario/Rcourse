@@ -9,69 +9,29 @@ The course consists in different short modules (named "sessions") focusing on a 
 Each session has the objective of introducing a given topic and will be very practical with minimal focus on theory. 
 
 In this repository, you can find the slides, R scripts & data for the course. 
+_____
+# Installing R and RStudio
 
-Below, a simple and NOT exhaustive list of the main topics covered by the course.
+To get started with R, you need to acquire your own copy. This appendix will show you how to download R as well as RStudio, a software application that makes R easier to use.
+Both R and RStudio are free and easy to download.
 
-________________________________________________________________________________________________
-DATA ANALYSIS WITH R
+# How to Download and Install R
 
-BASE
+R is maintained by an international team of developers who make the language available through the web page of [The Comprehensive R Archive Network](https://cran.r-project.org). The top of the web page provides three links for downloading R. Follow the link that describes your operating system: Windows, Mac, or Linux.
 
-Introduction to R;
-How to download and install R;
-Panels and toolbars;
-Data acquisition;
-Use of help and search for commands;
-How to write and run a script;
-Notes on packages developed in R environment;
-Pre-processing data;
-How to manage data distribution;
-Data normalization/standardization;
-Central tendency;
-Variability in data distribution;
-Measures of variability;
-Measures of symmetry;
-Understanding confidence interval;
-Statistical inference defined;
-Hypothesis testing;
-P-value;
-Errors in inference;
-Statistical power;
-Effect size;
-Independent and paired values;
-Parametric statistics;
-One-sample t-test;
-Two-sample t-test;
-One-way ANOVA;
-One-way ANOVA w/blocks;
-One-way ANOVA w/random blocks;
-Two-way ANOVA;
-Repeated measure ANOVA;
-Correlation and linear regression;
-Model assumption
+# A.1.1 Windows
 
-ADVANCED
+To install R on Windows, click the “Download R for Windows” link. Then click the “base” link. Next, click the first link at the top of the new page. This link should say something like “Download R 3.0.3 for Windows,” except the 3.0.3 will be replaced by the most current version of R. The link downloads an installer program, which installs the most up-to-date version of R for Windows. Run this program and step through the installation wizard that appears. The wizard will install R into your program files folders and place a shortcut in your Start menu. Note that you’ll need to have all of the appropriate administration privileges to install new software on your machine.
 
-Traditional Nonparametric Tests;
-Introduction to Traditional Nonparametric Tests;
-One-sample Wilcoxon Signed-rank Test;
-Sign Test for One-sample Data;
-Two-sample Mann–Whitney U Test;
-Mood’s Median Test for Two-sample Data;
-Two-sample Paired Signed-rank Test;
-Sign Test for Two-sample Paired Data;
-Kruskal–Wallis Test;
-Friedman Test;
-Aligned Ranks Transformation ANOVA;
-Multivariate analysis;
-Clustering;
-Ordination;
-Nonparametric Regression;
-Permutation Tests;
-Introduction to Linear Models;
-Random Effects;
-Generalized Linear Models;
-Generalized Additive Models;
-Model selection
+# A.1.2 Mac
 
+To install R on a Mac, click the “Download R for Mac” link. Next, click on the R-3.0.3 package link (or the package link for the most current release of R). An installer will download to guide you through the installation process, which is very easy. The installer lets you customize your installation, but the defaults will be suitable for most users. I’ve never found a reason to change them. If your computer requires a password before installing new progams, you’ll need it here.
+
+# A.1.3 Linux
+
+R comes preinstalled on many Linux systems, but you’ll want the newest version of R if yours is out of date. The CRAN website provides files to build R from source on Debian, Redhat, SUSE, and Ubuntu systems under the link “Download R for Linux.” Click the link and then follow the directory trail to the version of Linux you wish to install on. The exact installation procedure will vary depending on the Linux system you use. CRAN guides the process by grouping each set of source files with documentation or README files that explain how to install on your system.
+
+# Useful infos
+
+Please, remember that for the use of RStudio is MANDATORY to have R first installed on your PC.
 
