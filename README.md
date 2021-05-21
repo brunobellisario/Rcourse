@@ -31,6 +31,11 @@ To install R on a Mac, click the “Download R for Mac” link. Next, click on t
 
 R comes preinstalled on many Linux systems, but you’ll want the newest version of R if yours is out of date. The CRAN website provides files to build R from source on Debian, Redhat, SUSE, and Ubuntu systems under the link “Download R for Linux.” Click the link and then follow the directory trail to the version of Linux you wish to install on. The exact installation procedure will vary depending on the Linux system you use. CRAN guides the process by grouping each set of source files with documentation or README files that explain how to install on your system.
 
+# A. 2 RStudio
+
+RStudio is an Integrated Development Environment (IDE) for R, a programming language for statistical computing and graphics. It is available in two formats: RStudio Desktop is a regular desktop application while RStudio Server runs on a remote server and allows accessing RStudio using a web browser.
+You can download it for free [here](https://www.rstudio.com/products/rstudio/download/#download). Scroll down and choose the installer that fits your OS.
+
 # Useful infos
 
 Please, remember that for the use of RStudio is MANDATORY to have R first installed on your PC.
