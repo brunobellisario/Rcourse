@@ -7,9 +7,12 @@
 #MASS
 #rcompanion
 #The following commands will install these packages IF they are not already installed:
-if(!require(psych)){install.packages("car")}
+if(!require(psych)){install.packages("psych")}
 if(!require(MASS)){install.packages("MASS")}
 if(!require(rcompanion)){install.packages("rcompanion")}
+library(psych)
+library(MASS)
+library(rcompanion)
 #This example uses hypothetical data of river water turbidity.
 #Turbidity is a measure of how cloudy water is due to suspended material in the water.
 #Water quality parameters such as this are often naturally log-normally distributed:
@@ -79,11 +82,11 @@ min_max_norm <- function(x) {
   (x - min(x)) / (max(x) - min(x))
 }
 #apply Min-Max normalization to first four columns in iris dataset
-iris_norm <- as.data.frame(lapply(iris[1:4], min_max_norm))
+iris_norm <- as.data.frame(lapply(iris[,1:4], min_max_norm))
 #view first six rows of normalized iris dataset
 head(iris_norm)
 #standardize Sepal.Width
-iris$Sepal.Width.std <- (iris$Sepal.Width - mean(iris$Sepal.Width)) / sd(iris$Sepal.Width)
+iris$Sepal.Width.std = (iris$Sepal.Width - mean(iris$Sepal.Width)) / sd(iris$Sepal.Width)
 head(iris)
 #Let's have a look to the data
 plotNormalHistogram(iris$Sepal.Width)
@@ -250,6 +253,4 @@ MeanCI(iris$Petal.Width,conf.level=0.95)
 #3.Interpret the result
 #4.Measure the groupwise means of the sepal length attribute by using a different ci interval
 #####
-
-
 
