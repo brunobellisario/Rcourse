@@ -16,12 +16,12 @@ stressplot(nmds_results)
 #Plot the result
 # First create a data frame of the scores from the individuals.
 # This data frame will contain x and y values for where sites are located.
-data_scores <- as.data.frame(scores(nmds_results))
+data_scores <- as.data.frame(scores(nmds_results$points))
 # Now add the extra Species column
 data_scores <- cbind(data_scores, iris$Species)
 colnames(data_scores)[3] <- "Species"
 plot(data_scores[,1:2],col=data_scores$Species,pch=19)
-
+legend(-1,1,"pippo")
 #Principal Component Analysis (PCA)
 #Principal Component Analysis (PCA) is a useful technique for exploratory data analysis,
 #allowing you to better visualize the variation present in a dataset with many variables.
@@ -51,16 +51,24 @@ biplot(mtcars.pca)
 # Install devtools from CRAN
 install.packages("devtools")
 library(devtools)
-install_github("vqv/ggbiplot")
-library(ggbiplot)
-ggbiplot(mtcars.pca)
-ggbiplot(mtcars.pca, labels=rownames(mtcars))
+
+install_github("vqv/ggbiplot",type="source")#DEPRECATED_________________________
+library(ggbiplot)#DEPRECATED____________________________________________________
+ggbiplot(mtcars.pca)#DEPRECATED_________________________________________________
+ggbiplot(mtcars.pca, labels=rownames(mtcars))#DEPRECATED________________________
+
 #Interpreting the results
 #Maybe if you look at the origin of each of the cars. You'll put them into one of three categories,
 #one each for the US, Japanese and European cars. You make a list for this info, then pass it to the groups argument of ggbiplot.
 #You'll also set the ellipse argument to be TRUE, which will draw an ellipse around each group.
 mtcars.country <- c(rep("Japan", 3), rep("US",4), rep("Europe", 7),rep("US",3), "Europe", rep("Japan", 3), rep("US",4), rep("Europe", 3), "US", rep("Europe", 3))
 ggbiplot(mtcars.pca,ellipse=TRUE,  labels=rownames(mtcars), groups=mtcars.country)
+
+library(factoextra)#NEW SOLUTION________________________________________________
+factoextra::fviz_pca_ind(mtcars.pca,#NEW SOLUTION_______________________________
+             habillage=mtcars.country,#NEW SOLUTION_____________________________
+             addEllipses=TRUE)#NEW SOLUTION_____________________________________
+
 #the American cars form a distinct cluster to the right. Looking at the axes, you see that the American cars are characterized by
 #high values for cyl, disp, and wt. Japanese cars, on the other hand, are characterized by high mpg. European cars are somewhat in
 #the middle and less tightly clustered than either group.
@@ -90,10 +98,18 @@ data(varechem)
 
 ccamodel <- cca(varespec~., #by using the point after the tilde we will tell R to use ALL the variables in the environmental
                             #matrix
-                varechem)
+                data=varechem)
 summary(ccamodel)
 screeplot(ccamodel)#importance of components
 plot(ccamodel)
+
+## Note that "Total Inertia" is the total variance in species (observations matrix) distributions.
+#"Constrained Inertia" is the variance explained by the environmental variables (gradients matrix).
+#The "Proportion" values represent the percentages of variance of species distributions explained by Constrained (environmental)
+#and Unconstrained variables.
+#Eigenvalues of constrained and unconstrained axes represent the amount of variance explained by each CCA axis
+#(graphs usually present the first two constrained axes, so take a look at their values).
+
 #But...are we sure we need  ALL the env parameters to explain the observed variation in the community data matrix?
 #In R, we can automatically select those env variables that best explain the species matrix.
 #We can do that by using a stepwise model from "ordistep" function.
@@ -110,7 +126,7 @@ finalmodel<- ordistep(ccamodel, scope=formula(ccamodel))
 #In that case, we would have to delete the variable from our initial dataset and redo all the analysis.
 vif.cca(finalmodel)#it will measure collinearity by using the  variance inflation factors 
 #three variables, K, S and Al have high VIF
-#Usually, we could check previously how much  variables are correlated to each other.
+#Usually, we could check previously how much variables are correlated to each other.
 #We can simply correlate variables and decide to exclude those having an r>0.7. 
 #Notice that the absolute value of r is completely arbitrary. As a matter of facts, the higher the correlation,
 #the higher the probability for a variable to be collinear.
@@ -122,11 +138,17 @@ ccamodel.new <- cca(varespec~.,  new.env)
 finalmodel.new<- ordistep(ccamodel.new, scope=formula(ccamodel.new))
 # Testing the significance of the CCA model:
 anova.cca(finalmodel)
+
 # Testing the significance of terms (environmental variables):
 anova.cca(finalmodel, by="terms")
+anova.cca(finalmodel.new, by="terms")
 # Testing the significance of CCA axes (at least the first two or three should present a significant p value):
 anova.cca(finalmodel, by="axis")
+anova.cca(finalmodel.new, by="axis")
+
+par(mfrow=c(1,2))
 plot(finalmodel)
+plot(finalmodel.new)
 
 #Redundancy Analysis (RDA)
 #Choosing between CCA and RDA to biodiversity studies should be based on the type of
@@ -134,5 +156,3 @@ plot(finalmodel)
 #we should chose RDA. If we expect unimodal responses, we should chose CCA.
 #Of course, we can transform a non-linear data and use the RDA,
 #which usually has few problems than CCA.
-
-
