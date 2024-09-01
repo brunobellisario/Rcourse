@@ -8,7 +8,8 @@ R, a programming language and environment for statistical computing and graphics
 The course consists in different short modules (named "sessions") focusing on a topic related with R.
 Each session has the objective of introducing a given topic and will be very practical with minimal focus on theory. 
 
-In this repository, you can find the slides, R scripts & data for the course. 
+In this repository, you can find the slides, R scripts & data for the course.
+Open (https://github.com/brunobellisario/Rcourse/tree/1adb1c0816911bb093052e2c3dc1247ee724740e/Slides/Base)
 _____
 # Installing R and RStudio
 
