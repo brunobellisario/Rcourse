@@ -20,7 +20,7 @@ The easiest way to download all the material is to click on the Code button at t
 This option will download the entire course material (R Base & R Advanced).
 If you do not want to download everything (I can understand!), navigate to the Scripts and Slides folders, and download (right click -> download as) only the files related to the version of the course you are interested in (base or advanced).
 
-![Screenshot 2024-09-02 at 16-04-01 brunobellisario_Rcourse Data Analysis with R](https://github.com/user-attachments/assets/55098db6-9f1a-43b0-8649-72f8104c1b8e)
+[Video del 09-02-2024 04:18:26 PM.webm](https://github.com/user-attachments/assets/68a0de85-fea2-4a3f-87ea-f92f9397a312)
 
 
 # Installing R and RStudio
