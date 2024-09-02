@@ -15,12 +15,12 @@ In this repository, you can find the slides, R scripts & data for the course.
 
 The easiest way to download all the material is to click on the Code button at the top right of this page and select Download ZIP.
 
-![Code](https://github.com/user-attachments/assets/edd92ea1-04a5-469f-b82d-c7d9e0e6ef59)
+[video1.webm](https://github.com/user-attachments/assets/adff31f0-5d6a-4d6d-bd1b-865871f63020)
 
 This option will download the entire course material (R Base & R Advanced).
 If you do not want to download everything (I can understand!), navigate to the Scripts and Slides folders, and download (right click -> download as) only the files related to the version of the course you are interested in (base or advanced).
 
-[Video del 09-02-2024 04:18:26 PM.webm](https://github.com/user-attachments/assets/68a0de85-fea2-4a3f-87ea-f92f9397a312)
+[video2.webm](https://github.com/user-attachments/assets/091951f7-349d-4b2d-a831-96b0b8d56b49)
 
 
 # Installing R and RStudio
