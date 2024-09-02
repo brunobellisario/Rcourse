@@ -10,10 +10,12 @@ Each session has the objective of introducing a given topic and will be very pra
 
 In this repository, you can find the slides, R scripts & data for the course.
 
-_____
-# Installing R and RStudio
 
-_____
+# Download options
+
+The easiest way to download all the material is to click on the Code button at the top right of this page and select Download ZIP.
+This option will download the entire course material (R Base & R Advanced).
+
 # Installing R and RStudio
 
 To get started with R, you need to acquire your own copy. This appendix will show you how to download R as well as RStudio, a software application that makes R easier to use.
