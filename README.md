@@ -13,6 +13,9 @@ In this repository, you can find the slides, R scripts & data for the course.
 _____
 # Installing R and RStudio
 
+_____
+# Installing R and RStudio
+
 To get started with R, you need to acquire your own copy. This appendix will show you how to download R as well as RStudio, a software application that makes R easier to use.
 Both R and RStudio are free and easy to download.
 
